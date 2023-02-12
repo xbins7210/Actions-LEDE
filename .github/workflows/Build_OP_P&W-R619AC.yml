@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build Redmi AX6
+name: Build P&W-R619AC
 
 on:
   repository_dispatch:
@@ -60,11 +60,6 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
-    # 添加红米ax6 编译选项
-    - name: Redmi ax6 support
-      run: |
-        cat $GITHUB_WORKSPACE/ax6/generic.mk >> openwrt/target/linux/ipq807x/image/generic.mk
 
     - name: Load custom feeds
       run: |
