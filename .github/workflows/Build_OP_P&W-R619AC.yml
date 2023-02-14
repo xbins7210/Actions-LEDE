@@ -136,7 +136,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d-竞斗云2.0")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-IPQ4019-P&W-R619AC")" >> $GITHUB_OUTPUT
         touch release.txt
         echo "竞斗云2.0自用固件 Openwrt：" >> release.txt
         echo "默认系统后台：192.168.1.1" >> release.txt
