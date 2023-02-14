@@ -31,7 +31,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: redmi_ax6.config
+  CONFIG_FILE: r619ac.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -82,7 +82,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/r619ac.config
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
@@ -136,9 +136,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d-Redmi-AX6")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-竞斗云2.0")" >> $GITHUB_OUTPUT
         touch release.txt
-        echo "竞斗云自用固件 Openwrt：" >> release.txt
+        echo "竞斗云2.0自用固件 Openwrt：" >> release.txt
         echo "默认系统后台：192.168.1.1" >> release.txt
         echo "账号：root" >> release.txt
         echo "密码：password" >> release.txt
